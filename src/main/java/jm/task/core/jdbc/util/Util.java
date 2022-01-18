@@ -10,13 +10,7 @@ public class Util {
     private static final String UNAME = "root";
     private static final String PAS = "123456789";
 
-    public static Connection getConnection() {
-        Connection connection = null;
-        try {
-            connection =  DriverManager.getConnection(URL,UNAME,PAS);
-        } catch (SQLException e) {
-            System.out.println("Conn FAIL" + e);
-        }
-        return connection;
+    public static Connection getConnection() throws SQLException{
+            return DriverManager.getConnection(URL,UNAME,PAS);
     }
 }
